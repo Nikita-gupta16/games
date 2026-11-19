@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Coding World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🧩 Code<span>World</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#learn">Learn</a>
+        <a href="#games">Games</a>
+        <a href="#playground">Playground</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+
+    <button class="sound-btn" onclick="toggleSound()">🔊 Sound</button>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">🚀 LEARN CODING THE FUN WAY</div>
+
+        <h1>
+            Welcome to<br>
+            <span>Scratch Coding World!</span>
+        </h1>
+
+        <p>
+            Learn programming, play exciting games,
+            solve puzzles, and become a coding master!
+        </p>
+
+        <div class="hero-buttons">
+            <button onclick="scrollToSection('learn')">
+                📚 Start Learning
+            </button>
+
+            <button class="secondary"
+                    onclick="scrollToSection('games')">
+                🎮 Play Games
+            </button>
+        </div>
+
+        <div class="stats">
+            <div>
+                <h2>6+</h2>
+                <p>Lessons</p>
+            </div>
+
+            <div>
+                <h2>3</h2>
+                <p>Games</p>
+            </div>
+
+            <div>
+                <h2>100%</h2>
+                <p>Fun</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-art">
+
+        <div class="floating-board">
+            <div class="tic-cell">❌</div>
+            <div class="tic-cell">⭕</div>
+            <div class="tic-cell">❌</div>
+
+            <div class="tic-cell">⭕</div>
+            <div class="tic-cell">❌</div>
+            <div class="tic-cell">⭕</div>
+
+            <div class="tic-cell">❌</div>
+            <div class="tic-cell">⭕</div>
+            <div class="tic-cell">❌</div>
+        </div>
+
+        <div class="laptop-character">
+            <div class="laptop-screen">
+                <div class="eyes">
+                    <div class="eye"><div class="pupil"></div></div>
+                    <div class="eye"><div class="pupil"></div></div>
+                </div>
+
+                <div class="smile"></div>
+
+                <div class="character-text">HELLO!</div>
+            </div>
+
+            <div class="laptop-base"></div>
+
+            <div class="hand">👋</div>
+        </div>
+
+        <div class="code-card">
+            <div class="code-header">
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+            </div>
+
+            <div class="code-lines">
+                <p><span>let</span> coding = true;</p>
+                <p><span>if</span> (coding) {</p>
+                <p>&nbsp;&nbsp;learn();</p>
+                <p>&nbsp;&nbsp;haveFun();</p>
+                <p>}</p>
+            </div>
+        </div>
+
+        <div class="floating-icon icon1">💻</div>
+        <div class="floating-icon icon2">🚀</div>
+        <div class="floating-icon icon3">⭐</div>
+
+    </div>
+
+</section>
+
+<!-- LEARNING SECTION -->
+
+<section class="section" id="learn">
+
+    <div class="section-title">
+        <span>📚 LEARNING ZONE</span>
+        <h2>Learn Coding Step by Step</h2>
+        <p>Explore programming concepts in a simple way.</p>
+    </div>
+
+    <div class="lesson-grid" id="lessonGrid"></div>
+
+    <div class="lesson-display" id="lessonDisplay">
+        <h2>Choose a lesson to start!</h2>
+        <p>Click any lesson card above.</p>
+    </div>
+
+</section>
+
+<!-- GAMES SECTION -->
+
+<section class="section games-section" id="games">
+
+    <div class="section-title">
+        <span>🎮 GAME ZONE</span>
+        <h2>Play & Learn</h2>
+        <p>Improve your logic with fun coding games.</p>
+    </div>
+
+    <div class="games-grid">
+
+        <div class="game-card">
+            <div class="game-icon">⭕❌</div>
+            <h3>Tic-Tac-Toe</h3>
+            <p>Challenge the computer!</p>
+            <button onclick="openGame('tic')">Play Now</button>
+        </div>
+
+        <div class="game-card">
+            <div class="game-icon">🔢</div>
+            <h3>Number Guess</h3>
+            <p>Guess the secret number.</p>
+            <button onclick="openGame('guess')">Play Now</button>
+        </div>
+
+        <div class="game-card">
+            <div class="game-icon">🧠</div>
+            <h3>Memory Game</h3>
+            <p>Match programming symbols.</p>
+            <button onclick="openGame('memory')">Play Now</button>
+        </div>
+
+    </div>
+
+    <div class="game-area" id="gameArea">
+        <h2>Select a game!</h2>
+    </div>
+
+</section>
+
+<!-- PLAYGROUND -->
+
+<section class="section playground-section" id="playground">
+
+    <div class="section-title">
+        <span>💻 CODING PLAYGROUND</span>
+        <h2>Write Your Own Code</h2>
+        <p>Write JavaScript and see the output instantly.</p>
+    </div>
+
+    <div class="playground">
+
+        <div class="editor">
+
+            <div class="editor-header">
+                <span>JavaScript Editor</span>
+                <button onclick="runCode()">▶ Run Code</button>
+            </div>
+
+            <textarea id="codeEditor" spellcheck="false">console.log("Hello Coding World!");
+
+let name = "Coder";
+
+console.log("Welcome " + name);
+
+let a = 10;
+let b = 20;
+
+console.log("Sum:", a + b);</textarea>
+
+        </div>
+
+        <div class="output">
+
+            <div class="output-header">
+                Output
+                <button onclick="clearOutput()">Clear</button>
+            </div>
+
+            <pre id="outputBox">Your output will appear here...</pre>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="section quiz-section" id="quiz">
+
+    <div class="section-title">
+        <span>🧠 QUIZ TIME</span>
+        <h2>Test Your Coding Knowledge</h2>
+        <p>Answer questions and earn points!</p>
+    </div>
+
+    <div class="quiz-box" id="quizBox">
+
+        <div class="quiz-info">
+            <span id="questionNumber">Question 1</span>
+            <span id="quizScore">Score: 0</span>
+        </div>
+
+        <h2 id="questionText"></h2>
+
+        <div id="answerButtons"></div>
+
+        <button id="nextButton" onclick="nextQuestion()" hidden>
+            Next Question ➜
+        </button>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>🧩 CodeWorld</h2>
+
+    <p>Learn Coding • Play Games • Build Your Future</p>
+
+    <p>Made with ❤️ using HTML, CSS & JavaScript</p>
+
+    <p>© 2026 CodeWorld Learning</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
